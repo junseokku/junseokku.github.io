@@ -1,3 +1,0 @@
-## 개발중인 블로그입니다...
-
-<img src="https://user-images.githubusercontent.com/28581687/154829033-8df058e1-fff6-4a7e-a373-4992f1f42926.png">
