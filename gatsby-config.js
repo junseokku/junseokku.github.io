@@ -3,7 +3,7 @@ module.exports = {
         title: `Jun.Dev`,
         description: `My Blog for record to study`,
         author: `Jun`,
-        siteUrl: `https://asegh12.github.io/`,
+        siteUrl: `https://junseokku.github.io/`,
     },
     plugins: [
         {
@@ -24,7 +24,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-canonical-urls',
             options: {
-                siteUrl: 'https://asegh12.github.io/',
+                siteUrl: 'https://junseokku.github.io/',
                 stripQueryString: true,
             },
         },
