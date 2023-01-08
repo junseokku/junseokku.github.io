@@ -19,23 +19,25 @@ type GatsbyLinkProps = {
     to: string;
 } & CategoryItemProps;
 
-const CategoryListWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    width: 1024px;
-    margin: 20px auto 0;
-    padding: 1.5rem;
-    border: 1px rgba(0, 0, 0, 0.1) solid;
-    border-radius: 1rem;
+const CategoryList: FunctionComponent<CategoryListProps> = function ({
+    selectedCategory,
+    categoryList,
+}) {
+    return (
+        <CategoryListWrapper>
+            {Object.entries(categoryList).map(([name, count]) => (
+                <CategoryItem
+                    to={`/?category=${name}`}
+                    active={name === selectedCategory}
+                    key={name}
+                >
+                    {name} ({count})
+                </CategoryItem>
+            ))}
+        </CategoryListWrapper>
+    );
+};
 
-    @media (max-width: 1024px) {
-        width: 100%;
-        margin-top: 50px;
-        padding: 0 20px;
-    }
-`;
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
     <Link {...props} />
 ))<CategoryItemProps>`
@@ -60,23 +62,13 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
     }
 `;
 
-const CategoryList: FunctionComponent<CategoryListProps> = function ({
-    selectedCategory,
-    categoryList,
-}) {
-    return (
-        <CategoryListWrapper>
-            {Object.entries(categoryList).map(([name, count]) => (
-                <CategoryItem
-                    to={`/?category=${name}`}
-                    active={name === selectedCategory}
-                    key={name}
-                >
-                    {name} ({count})
-                </CategoryItem>
-            ))}
-        </CategoryListWrapper>
-    );
-};
+const CategoryListWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto 0;
+    padding: 1.5rem;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    border-radius: 1rem;
+`;
 
 export default CategoryList;

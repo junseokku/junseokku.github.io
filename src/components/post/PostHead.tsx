@@ -7,6 +7,28 @@ type PostHeadProps = {
     categories: string[];
 };
 
+const PostHead: FunctionComponent<PostHeadProps> = function ({
+    title,
+    date,
+    categories,
+}) {
+    return (
+        <PostHeaderWrapper>
+            <TitleDateWrapper>
+                <TitleWrapper>{title}</TitleWrapper>
+                <CategoriesDateWrapper>
+                    {categories}, {date}
+                </CategoriesDateWrapper>
+            </TitleDateWrapper>
+        </PostHeaderWrapper>
+    );
+};
+
+const PostHeaderWrapper = styled.div`
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+`;
+
 const TitleDateWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -14,8 +36,8 @@ const TitleDateWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 0.7rem;
 `;
 
@@ -23,22 +45,5 @@ const CategoriesDateWrapper = styled.span`
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.5);
 `;
-
-const PostHead: FunctionComponent<PostHeadProps> = function ({
-    title,
-    date,
-    categories,
-}) {
-    return (
-        <div>
-            <TitleDateWrapper>
-                <TitleWrapper>{title}</TitleWrapper>
-                <CategoriesDateWrapper>
-                    {categories}, {date}
-                </CategoriesDateWrapper>
-            </TitleDateWrapper>
-        </div>
-    );
-};
 
 export default PostHead;

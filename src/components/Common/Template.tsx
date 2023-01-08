@@ -12,12 +12,6 @@ type TemplateProps = {
     children: ReactNode;
 };
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-`;
-
 const Template: FunctionComponent<TemplateProps> = function ({
     title,
     description,
@@ -56,10 +50,25 @@ const Template: FunctionComponent<TemplateProps> = function ({
 
             <GlobalStyle />
             <Header title={title} />
-            {children}
+            <ChildrenWrapper>{children}</ChildrenWrapper>
             <Footer />
         </Container>
     );
 };
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+`;
+
+const ChildrenWrapper = styled.div`
+    width: 1024px;
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+`;
 
 export default Template;

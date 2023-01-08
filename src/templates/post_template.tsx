@@ -25,16 +25,9 @@ type PostTemplateProps = {
 };
 
 const PostWrapper = styled.div`
-    width: 1024px;
-    height: auto;
-    margin: 0px auto;
-    margin-top: 1.5rem;
+    padding: 50px 30px 0;
     display: flex;
-`;
-
-const Content = styled.div`
-    width: 768px;
-    margin: 0px 10px;
+    flex-direction: column;
 `;
 
 const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
@@ -58,16 +51,9 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
             url={siteMetadata.siteUrl}
         >
             <PostWrapper>
-                <Content>
-                    <PostHead
-                        title={title}
-                        date={date}
-                        categories={categories}
-                    />
-                    <PostContent html={html} />
-                </Content>
+                <PostHead title={title} date={date} categories={categories} />
+                <PostContent html={html} />
             </PostWrapper>
-            {/* <CommentWidget /> */}
         </Template>
     );
 };

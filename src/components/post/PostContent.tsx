@@ -5,6 +5,10 @@ interface PostContentProps {
     html: string;
 }
 
+const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
+    return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+};
+
 const MarkdownRenderer = styled.div`
     // Renderer Style
     display: flex;
@@ -14,116 +18,113 @@ const MarkdownRenderer = styled.div`
     padding: 50px 0;
     word-break: break-all;
 
-    // Markdown Style
-    line-height: 1.8;
-    font-size: 16px;
-    font-weight: 400;
-
-    // Apply Padding Attribute to All Elements
-    p {
-        padding: 3px 0;
-    }
-
-    // Adjust Heading Element Style
-    h1,
-    h2,
-    h3 {
-        font-weight: 700;
-        /* margin-bottom: 5px; */
-    }
-
-    hr + h1,
-    hr + h2,
-    hr + h3 {
-        margin-top: 0;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    // Adjust Quotation Element Style
-    blockquote {
-        margin: 30px 0;
-        padding: 5px 15px;
-        border-left: 2px solid #000000;
-        font-weight: 600;
-    }
-
-    // Adjust List Element Style
-    ol,
-    ul {
-        margin-left: 20px;
-        padding: 5px;
-    }
-
-    // Adjust Horizontal Rule style
-    hr {
-        margin: 1rem 0;
-    }
-
-    // Adjust Link Element Style
     a {
-        color: #4263eb;
+        color: #4183c4;
+        text-decoration: none;
+    }
+
+    a:hover {
         text-decoration: underline;
     }
 
-    // Adjust Code Style
-    pre[class*='language-'] {
-        margin: 30px 0;
-        padding: 15px;
-        font-size: 15px;
+    p,
+    blockquote,
+    ul,
+    ol,
+    dl,
+    table,
+    pre {
+        margin: 15px 0;
+    }
 
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 3px;
-        }
+    ul,
+    ol {
+        padding-left: 30px;
+    }
+
+    h1 {
+        border-bottom: 1px solid #ddd;
+        color: #000;
+        font-size: 2.5em;
+    }
+
+    h2 {
+        border-bottom: 1px solid #eee;
+        color: #000;
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h6 {
+        color: #777;
+        font-size: 1em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        line-height: 1.7;
+        margin: 1em 0 15px 0;
+    }
+
+    h1 + p,
+    h2 + p,
+    h3 + p {
+        margin-top: 10px;
+    }
+
+    img {
+        max-width: 100%;
     }
 
     code[class*='language-'],
     pre[class*='language-'] {
-        tab-size: 2;
+        background-color: #f8f8f8;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        font-family: Consolas, 'Liberation Mono', Courier, monospace;
+        font-size: 12px;
+        margin: 0 2px;
+        padding: 0 5px;
+        white-space: pre;
     }
 
-    // Markdown Responsive Design
-    @media (max-width: 1024px) {
-        width: 100%;
-        padding: 80px 20px;
-        line-height: 1.6;
-        font-size: 14px;
+    pre code[class*='language-'] {
+        border: none;
+        margin: 0;
+        padding: 0;
+        white-space: pre;
+    }
 
-        h1 {
-            font-size: 23px;
-        }
+    blockquote {
+        margin: 0;
+        padding: 0 1em;
+        color: #57606a;
+        border-left: 0.25em solid #d0d7de;
+    }
 
-        h2 {
-            font-size: 20px;
-        }
+    blockquote > :first-child {
+        margin-top: 0;
+    }
 
-        h3 {
-            font-size: 17px;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        hr {
-            margin: 50px 0;
-        }
+    blockquote > :last-child {
+        margin-bottom: 0;
     }
 `;
-
-const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
-    return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
-};
 
 export default PostContent;

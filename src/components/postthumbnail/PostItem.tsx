@@ -5,6 +5,21 @@ import { PostFrontmatterType } from 'types/PostItem.types';
 
 type PostItemProps = PostFrontmatterType & { link: string };
 
+const PostItem: FunctionComponent<PostItemProps> = function ({
+    title,
+    date,
+    summary,
+    link,
+}) {
+    return (
+        <PostItemWrapper to={link}>
+            <Title>{title}</Title>
+            <Summary>{summary}</Summary>
+            <Date>{date}</Date>
+        </PostItemWrapper>
+    );
+};
+
 const PostItemWrapper = styled(Link)`
     display: flex;
     flex-direction: column;
@@ -50,20 +65,5 @@ const Date = styled.div`
     font-size: 14px;
     color: rgba(0, 0, 0, 0.3);
 `;
-
-const PostItem: FunctionComponent<PostItemProps> = function ({
-    title,
-    date,
-    summary,
-    link,
-}) {
-    return (
-        <PostItemWrapper to={link}>
-            <Title>{title}</Title>
-            <Summary>{summary}</Summary>
-            <Date>{date}</Date>
-        </PostItemWrapper>
-    );
-};
 
 export default PostItem;

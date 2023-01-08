@@ -6,6 +6,7 @@ import PostList from 'components/postthumbnail/PostList';
 import { PostListItemType } from 'types/PostItem.types';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
+import styled from '@emotion/styled';
 
 type IndexPageProps = {
     location: {
