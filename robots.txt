@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://asegh12.github.io/sitemap/sitemap-index.xml
-Host: https://asegh12.github.io
+Sitemap: https://junseokku.github.io/sitemap/sitemap-index.xml
+Host: https://junseokku.github.io
