@@ -6242,6 +6242,11 @@
   "resolved" "https://registry.npmjs.org/github-from-package/-/github-from-package-0.0.0.tgz"
   "version" "0.0.0"
 
+"github-markdown-css@^5.1.0":
+  "integrity" "sha512-QLtORwHHtUHhPMHu7i4GKfP6Vx5CWZn+NKQXe+cBhslY1HEt0CTEkP4d/vSROKV0iIJSpl4UtlQ16AD8C6lMug=="
+  "resolved" "https://registry.npmjs.org/github-markdown-css/-/github-markdown-css-5.1.0.tgz"
+  "version" "5.1.0"
+
 "github-slugger@^1.2.1", "github-slugger@^1.3.0":
   "integrity" "sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ=="
   "resolved" "https://registry.npmjs.org/github-slugger/-/github-slugger-1.4.0.tgz"

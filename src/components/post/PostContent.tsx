@@ -1,12 +1,18 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
+import 'github-markdown-css/github-markdown-light.css';
 
 interface PostContentProps {
     html: string;
 }
 
 const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
-    return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+    return (
+        <div
+            className="markdown-body"
+            dangerouslySetInnerHTML={{ __html: html }}
+        />
+    );
 };
 
 const MarkdownRenderer = styled.div`
