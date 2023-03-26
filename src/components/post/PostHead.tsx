@@ -36,7 +36,7 @@ const TitleDateWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.7rem;
 `;

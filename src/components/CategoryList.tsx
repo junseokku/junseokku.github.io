@@ -65,7 +65,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
 const CategoryListWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: 20px auto 0;
+    margin: 20px 15px 0;
     padding: 1.5rem;
     border: 1px rgba(0, 0, 0, 0.1) solid;
     border-radius: 1rem;
