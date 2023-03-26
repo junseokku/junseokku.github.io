@@ -62,6 +62,7 @@ const Container = styled.div`
     height: 100%;
     justify-content: center;
     align-items: center;
+    overflow: overlay;
 `;
 
 const ChildrenWrapper = styled.div`
